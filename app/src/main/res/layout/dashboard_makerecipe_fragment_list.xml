@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   xmlns:tools="http://schemas.android.com/tools"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="match_parent"
+                                                   android:background="@color/dark_gray"
+                                                   android:id="@+id/makeRecipe_fragment" android:clipChildren="false"
+                                                   android:clipToPadding="false">
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" android:clipChildren="false" android:clipToPadding="false">
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:layout_marginTop="25dp"
+                android:layout_marginBottom="5dp" android:layout_marginStart="15dp">
+            <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:gravity="center"
+                    android:id="@+id/makeRecipeList_backButton"
+            >
+                <ImageView
+                        android:layout_width="27dp"
+                        android:layout_height="match_parent" tools:srcCompat="@drawable/image_back_icon"
+                        app:srcCompat="@drawable/image_back_icon"
+                        android:id="@+id/imageView"
+                        android:layout_weight="1" android:visibility="visible"/>
+                <TextView
+                        android:text="@string/back_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:id="@+id/textView" android:layout_weight="1"
+                        android:textColor="@color/white" android:textSize="18sp" android:gravity="center"
+                        android:paddingStart="3dp"/>
+            </LinearLayout>
+        </LinearLayout>
+        <TextView
+                android:text="@string/makeRecipeList_recipeLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView12" android:gravity="center_horizontal"
+                android:textSize="25sp" android:textStyle="bold" android:textColor="@color/light_gray"
+                android:layout_marginTop="15dp"/>
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_marginTop="15dp" android:layout_marginEnd="15dp"
+                android:layout_marginStart="15dp" android:clipChildren="false" android:clipToPadding="false">
+
+            <ProgressBar
+                    style="?android:attr/progressBarStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/makeRecipeList_progressBar"
+                    android:layout_gravity="center_vertical" android:layout_centerInParent="true"
+                    android:visibility="invisible"/>
+            <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="500dp"
+                    android:id="@+id/makeRecipeList_recyclerView" android:clipChildren="false"
+                    android:clipToPadding="false">
+            </androidx.recyclerview.widget.RecyclerView>
+        </RelativeLayout>
+        <Button
+                android:text="@string/makeRecipeList_addButton"
+                android:layout_width="match_parent"
+                android:layout_height="50dp" android:id="@+id/makeRecipeList_addRecipe"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp" android:layout_marginTop="15dp"
+                android:backgroundTint="@color/orangie" android:textSize="16sp" android:textStyle="bold"/>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

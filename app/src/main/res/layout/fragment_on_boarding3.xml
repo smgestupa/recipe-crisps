@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/orangie"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/image3"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/img3"
+        app:layout_constraintHorizontal_bias=".3"
+        app:layout_constraintVertical_bias=".3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/title1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/recipeCrisps"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintVertical_bias="0"
+        app:layout_constraintHorizontal_bias="0"
+        android:layout_marginTop="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/image3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/image3"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/free"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/free"
+        android:textColor="@color/white"
+        android:textSize="42sp"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintVertical_bias="0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/image3"
+        app:layout_constraintTop_toBottomOf="@id/image3"/>
+
+    <TextView
+        android:id="@+id/access"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-condensed"
+        android:text="@string/access"
+        android:textSize="56sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintVertical_bias="0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/free"
+        app:layout_constraintTop_toBottomOf="@+id/free" />
+
+    <TextView
+        android:id="@+id/description3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/description3"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintVertical_bias="0"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintHeight_percent=".1"
+        app:layout_constraintWidth_percent=".5"
+        android:layout_marginTop="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/access"
+        app:layout_constraintTop_toBottomOf="@+id/access"/>
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="10dp"
+        android:src="@drawable/tab3"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintVertical_bias=".6"
+        android:layout_marginLeft="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/description3"
+        app:layout_constraintTop_toBottomOf="@+id/description3" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatActBut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        android:src="@drawable/next"
+        app:layout_constraintVertical_bias="1"
+        app:layout_constraintHorizontal_bias="1"
+        android:layout_margin="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

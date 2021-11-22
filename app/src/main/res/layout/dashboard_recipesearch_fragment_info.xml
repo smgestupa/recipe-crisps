@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   xmlns:tools="http://schemas.android.com/tools"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="match_parent"
+                                                   android:clipChildren="false"
+                                                   android:clipToPadding="false" android:clickable="true"
+                                                   android:translationZ="20dp">
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" android:id="@+id/recipeInfo_showRecipeInfo"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" android:visibility="visible">
+        <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/recipeInfo_closeRecipeInfo" android:paddingBottom="150dp"
+                android:background="@android:color/transparent"
+                android:layout_marginBottom="-25dp">
+
+        </RelativeLayout>
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/recipe_info" android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" android:translationZ="10dp"
+                android:backgroundTint="@color/orangie">
+
+            <ProgressBar
+                    style="?android:attr/progressBarStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/recipeInfo_progressBar"
+                    android:layout_centerInParent="true" android:scaleY="1.5" android:scaleX="1.5"
+                    tools:visibility="visible"/>
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" android:id="@+id/recipeInfo_view"
+                    android:visibility="invisible" tools:visibility="visible">
+
+                <TextView
+                        android:text="@string/recipeTitle_placeholder"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:id="@+id/recipeInfo_recipeName"
+                        android:layout_centerHorizontal="true" android:layout_marginTop="15dp" android:textSize="18sp"
+                        android:textStyle="bold" android:layout_marginStart="25dp" android:layout_marginEnd="25dp"
+                        android:gravity="center" android:layout_marginBottom="50dp" android:textColor="@color/white"/>
+                <androidx.core.widget.NestedScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" android:layout_marginTop="-40dp"
+                        android:layout_below="@+id/recipeInfo_recipeName">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                                  android:orientation="vertical">
+                        <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                            <TextView
+                                    android:text="@string/recipePricePerServing_placeholder"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" android:id="@+id/recipeInfo_pricePerServing"
+                                    android:layout_toEndOf="@+id/recipeInfo_recipeImage"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginTop="5dp" android:textSize="18sp"
+                                    android:layout_below="@+id/textView10" android:textColor="@color/white"/>
+                            <TextView
+                                    android:text="@string/recipeReadyIn_placeholder"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" android:id="@+id/recipeInfo_readyIn"
+                                    android:layout_toEndOf="@+id/textView9" android:layout_marginStart="10dp"
+                                    android:layout_marginTop="15dp" android:textSize="18sp"
+                                    android:layout_below="@+id/recipeInfo_servings" android:textColor="@color/white"/>
+                            <TextView
+                                    android:text="@string/recipePricePerServing_label"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold"
+                                    android:id="@+id/textView10"
+                                    android:layout_toEndOf="@+id/recipeInfo_recipeImage"
+                                    android:layout_marginStart="20dp" android:layout_marginTop="15dp"
+                                    android:layout_below="@+id/textView9" android:textColor="@color/white"/>
+                            <TextView
+                                    android:text="@string/recipeReadyIn_label"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="18sp"
+                                    android:layout_marginTop="15dp" android:textStyle="bold"
+                                    android:id="@+id/textView9" android:layout_below="@+id/textView8"
+                                    android:layout_toEndOf="@+id/recipeInfo_recipeImage"
+                                    android:layout_marginStart="20dp" android:textColor="@color/white"/>
+                            <TextView
+                                    android:text="@string/recipeServings_label"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_toEndOf="@+id/recipeInfo_recipeImage"
+                                    android:layout_marginStart="20dp" android:textSize="18sp"
+                                    android:layout_marginTop="10dp" android:textStyle="bold"
+                                    android:id="@+id/textView8" android:textColor="@color/white"/>
+                            <ImageView
+                                    android:layout_width="153dp"
+                                    android:layout_height="147dp" tools:srcCompat="@tools:sample/avatars"
+                                    android:id="@+id/recipeInfo_recipeImage"
+                                    android:layout_marginStart="15dp" android:layout_marginTop="10dp"
+                                    android:layout_marginBottom="10dp"/>
+                            <TextView
+                                    android:text="@string/recipeServings_placeholder"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" android:id="@+id/recipeInfo_servings"
+                                    android:layout_toEndOf="@+id/textView8" android:layout_marginStart="10dp"
+                                    android:layout_marginTop="10dp" android:textSize="18sp"
+                                    android:textColor="@color/white"/>
+                        </RelativeLayout>
+                        <TextView
+                                android:text="@string/recipeIngredients_label"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" android:id="@+id/textView7"
+                                android:layout_marginStart="15dp" android:layout_marginTop="10dp"
+                                android:layout_marginBottom="5dp" android:textSize="18sp" android:textStyle="bold"
+                                android:textColor="@color/white"/>
+                        <androidx.recyclerview.widget.RecyclerView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" android:layout_marginStart="15dp"
+                                android:layout_marginEnd="15dp" android:id="@+id/recipeInfo_recyclerView"
+                                android:background="@android:color/transparent" android:visibility="visible"
+                                android:clipChildren="false" android:clipToPadding="false"
+                                android:nestedScrollingEnabled="false"/>
+                    </LinearLayout>
+                </androidx.core.widget.NestedScrollView>
+            </RelativeLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

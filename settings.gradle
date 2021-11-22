@@ -1,0 +1,2 @@
+rootProject.name = "CITE306-Final"
+include ':app'

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   xmlns:tools="http://schemas.android.com/tools"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="match_parent"
+>
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" android:background="@color/dark_gray">
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:layout_marginTop="25dp"
+                android:layout_marginBottom="15dp" android:layout_marginStart="15dp">
+            <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:gravity="center"
+                    android:id="@+id/makeRecipe_closeButton"
+            >
+                <ImageView
+                        android:layout_width="27dp"
+                        android:layout_height="match_parent" tools:srcCompat="@drawable/image_close_icon"
+                        app:srcCompat="@drawable/image_close_icon"
+                        android:id="@+id/imageView"
+                        android:layout_weight="1" android:visibility="visible"/>
+                <TextView
+                        android:text="@string/recipeMakeUpdate_closeInterface"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:id="@+id/textView" android:layout_weight="1"
+                        android:textColor="@color/white" android:textSize="18sp" android:gravity="center"
+                        android:paddingStart="3dp"/>
+            </LinearLayout>
+        </LinearLayout>
+        <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="221dp" android:id="@+id/makeRecipe_removeIngredient"
+        >
+
+            <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:inputType="textVisiblePassword"
+                        android:id="@+id/makeRecipe_searchField" android:layout_marginStart="25dp"
+                        android:layout_marginEnd="25dp" android:background="@drawable/rounded_md"
+                        android:backgroundTint="@color/black_gray" android:paddingStart="10dp"
+                        android:paddingEnd="10dp" android:textColor="@color/white"
+                        android:textColorHint="@color/light_gray" android:hint="@string/recipeMakeUpdate_searchHint"
+                        android:layout_marginBottom="15dp" android:imeOptions="actionDone"/>
+                <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginBottom="15dp" android:layout_marginEnd="15dp">
+
+                    <ProgressBar
+                            style="?android:attr/progressBarStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/searchedIngredientsList_progressBar"
+                            android:layout_centerInParent="true" android:scaleX="1.1" android:scaleY="1.1"
+                            android:visibility="invisible"/>
+                    <androidx.recyclerview.widget.RecyclerView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingTop="5dp"
+                            android:paddingStart="5dp" android:paddingEnd="5dp" android:paddingBottom="5dp"
+                            android:id="@+id/makeRecipe_searchedIngredientsList">
+                    </androidx.recyclerview.widget.RecyclerView>
+                </RelativeLayout>
+            </LinearLayout>
+        </RelativeLayout>
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" android:gravity="center_horizontal|center_vertical"
+                android:background="@drawable/recipe_info" android:backgroundTint="@color/orangie">
+
+            <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp" android:layout_marginTop="15dp">
+                <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:layout_marginBottom="5dp">
+                    <EditText
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:inputType="textVisiblePassword"
+                            android:ems="10"
+                            android:id="@+id/makeRecipe_recipeName" android:layout_weight="1"
+                            android:hint="@string/recipeMakeUpdate_recipeNameHint"
+                            android:background="@drawable/design_rounded_lg"
+                            android:textColor="@color/white" android:textColorHint="@color/white"
+                            android:paddingStart="10dp" android:paddingEnd="10dp"
+                            android:textSize="18sp" android:paddingTop="5dp" android:paddingBottom="5dp"
+                            android:gravity="center_horizontal" android:imeOptions="actionDone"
+                            android:backgroundTint="@android:color/transparent"/>
+                </LinearLayout>
+                <androidx.recyclerview.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:layout_height="300dp" android:id="@+id/makeRecipe_addedIngredientsList">
+                </androidx.recyclerview.widget.RecyclerView>
+                <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:layout_marginStart="15dp"
+                        android:layout_marginTop="15dp" android:layout_marginEnd="15dp">
+                    <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent">
+                        <TextView
+                                android:text="@string/recipeMakeUpdate_costLabel"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1" android:textSize="18sp" android:textStyle="bold"
+                                android:id="@+id/textView3"
+                                android:layout_gravity="center_vertical" android:textColor="@color/white"/>
+                        <TextView
+                                android:text="@string/recipeMakeUpdate_costPlaceholder"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1" android:textSize="18sp"
+                                android:id="@+id/makeRecipe_estimatedCost"
+                                android:layout_gravity="center_vertical" android:paddingStart="15dp"
+                                android:paddingEnd="15dp" android:textColor="@color/white"/>
+                    </LinearLayout>
+                    <Button
+                            android:text="@string/recipeMakeUpdate_saveButton"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp" android:id="@+id/makeRecipeUpdate_saveRecipe"
+                            android:backgroundTint="@color/light_blue" android:textSize="16sp"
+                            android:textStyle="bold" android:layout_marginStart="15dp"/>
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

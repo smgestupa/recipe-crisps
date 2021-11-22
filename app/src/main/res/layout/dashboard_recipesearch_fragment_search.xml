@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   xmlns:tools="http://schemas.android.com/tools"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="match_parent"
+                                                   android:background="@color/dark_gray" android:clipChildren="false"
+                                                   android:clipToPadding="false"
+                                                   android:id="@+id/recipeSearch_fragment">
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" android:clipChildren="false" android:clipToPadding="false">
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="25dp"
+                android:gravity="center"
+                android:layout_marginStart="15dp" android:id="@+id/recipeSearch_backButton"
+                android:layout_marginBottom="5dp">
+            <ImageView
+                    android:layout_width="27dp"
+                    android:layout_height="match_parent" tools:srcCompat="@drawable/image_back_icon"
+                    app:srcCompat="@drawable/image_back_icon"
+                    android:id="@+id/imageView"
+                    android:layout_weight="1" android:visibility="visible"/>
+            <TextView
+                    android:text="@string/back_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:id="@+id/textView" android:layout_weight="1"
+                    android:textColor="@color/white" android:textSize="18sp" android:gravity="center"
+                    android:paddingStart="3dp"/>
+        </LinearLayout>
+        <TextView
+                android:text="@string/recipe_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/textView6" android:textColor="@color/light_gray"
+                android:textSize="25sp"
+                android:textStyle="bold" android:layout_marginTop="15dp" android:layout_gravity="center_horizontal"/>
+        <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginTop="20dp"
+                app:layout_constrainedWidth="true" android:id="@+id/relativeLayout4">
+
+            <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:inputType="textVisiblePassword"
+                    android:ems="19"
+                    android:id="@+id/recipeSearch_searchField" android:background="@drawable/rounded_md"
+                    android:backgroundTint="@color/black_gray" android:paddingStart="45dp" android:paddingEnd="10dp"
+                    android:textColorHint="@color/light_gray" android:hint="@string/recipe_hint"
+                    android:layout_centerHorizontal="true" android:textColor="@color/white"
+                    android:imeOptions="actionDone"/>
+            <ImageView
+                    android:layout_height="wrap_content" app:srcCompat="@drawable/search_icon"
+                    android:id="@+id/imageView2" android:layout_width="25dp" android:layout_marginStart="10dp"/>
+        </RelativeLayout>
+        <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="1dp"
+                android:layout_marginStart="1dp" android:layout_marginTop="30dp" android:visibility="visible"
+                android:id="@+id/relativeLayout5"
+                android:clipChildren="false" android:clipToPadding="false">
+
+            <ProgressBar
+                    style="?android:attr/progressBarStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/recipeSearch_progressBar"
+                    android:scaleX="1.5" android:scaleY="1.5"
+                    android:visibility="invisible"
+                    android:translationZ="5dp"
+                    android:layout_marginTop="150dp"
+                    android:layout_centerInParent="true"/>
+            <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/recipeSearch_recipeQueryList"
+                    app:layout_constrainedHeight="true"
+                    android:background="@android:color/transparent" app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+                    android:visibility="invisible"
+                    android:clipChildren="false" android:clipToPadding="false">
+            </androidx.recyclerview.widget.RecyclerView>
+        </RelativeLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

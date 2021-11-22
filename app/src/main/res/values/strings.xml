@@ -1,0 +1,82 @@
+<resources>
+    <string name="app_name">Recipe Crisps</string>
+    <!-- STRINGS -->
+    <string name="email_label">Email</string>
+    <string name="password_label">Password</string>
+    <string name="username_label">Username</string>
+    <string name="recipeName_placeholder">%recipe_name%</string>
+    <string name="ingredientTitle_placeholder">%ingredient_title%</string>
+    <string name="ingredientName_placeholder">%ingredient_title%</string>
+    <!--    LOG IN STRINGS -->
+    <string name="field_email">Email</string>
+    <string name="field_password">Password</string>
+    <string name="login_button">Log In</string>
+    <string name="register_textView">Need an account? Register here</string>
+    <string name="forgot_textView">Forgot your password?</string>
+    <string name="welcome_text">Welcome!</string>
+    <string name="welcome_desc">Are you ready to search some recipes, make your own ingredients, or create your own
+        shopping list?
+    </string>
+    <string name="title_welcome">Welcome to Recipe Crisps</string>
+    <!--    REGISTER STRINGS -->
+    <string name="register_text">Register</string>
+    <string name="register_button">Create account</string>
+    <string name="field_username">Username</string>
+    <string name="back_text">Dashboard</string>
+    <string name="account_name">Your account name</string>
+    <string name="account_info">Account information</string>
+    <!--    FORGOT STRINGS -->
+    <string name="forgot_text">Forgot Password</string>
+    <string name="forgot_info">You will be given a reset confirmation to your email, and open that to reset your account.</string>
+    <string name="forgot_button">Reset Account</string>
+    <!--    SEARCH RECIPE STRINGS -->
+    <string name="recipe_textView">Recipe Search</string>
+    <string name="recipe_hint">Search a recipe here</string>
+    <!-- DASHBOARD STRINGS -->
+    <string name="dashboard_logOutButton">Log Out</string>
+    <string name="dashboard_welcomeLabel">Welcome,</string>
+    <string name="dashboard_activitiesLabel">Activities</string>
+    <string name="dashboard_switchToSearchLabel">Search A Recipe</string>
+    <string name="dashboard_switchToMakeRecipeLabel">Make Your Own Recipe</string>
+    <!-- RECIPE ROW STRINGS -->
+    <string name="recipeTitle_placeholder">%recipe_title%</string>
+    <string name="recipeServings_label">Servings</string>
+    <string name="recipeReadyIn_label">Ready In</string>
+    <string name="recipePricePerServing_label">Price per Serving</string>
+    <string name="recipeIngredients_label">Ingredients</string>
+    <string name="recipeServings_placeholder">%servings%</string>
+    <string name="recipeReadyIn_placeholder">%ready_in%</string>
+    <string name="recipePricePerServing_placeholder">%price_per_serving%</string>
+    <!-- MAKE RECIPE LIST STRINGS -->
+    <string name="makeRecipeList_recipeLabel">Your Recipes</string>
+    <string name="makeRecipeList_addButton">Add Your Own Recipe</string>
+    <!-- MAKE RECIPE INFO STRINGS -->
+    <string name="makeRecipeInfo_deleteButton">Delete Button</string>
+    <!-- MAKE RECIPE FRAGMENT UPDATE STRINGS -->
+    <string name="recipeMakeUpdate_closeInterface">Close Interface</string>
+    <string name="recipeMakeUpdate_searchHint">Search an Ingredient</string>
+    <string name="recipeMakeUpdate_recipeNameHint">Type recipe name here…</string>
+    <string name="recipeMakeUpdate_costLabel">Cost</string>
+    <string name="recipeMakeUpdate_costPlaceholder">%cost%</string>
+    <string name="recipeMakeUpdate_saveButton">Save</string>
+    <string name="recipeMakeUpdate_updateButton">Update</string>
+    <!-- RECIPE INGREDIENT ROW STRINGS -->
+    <string name="recipeIngredientAmount_label">Ingredient Amount</string>
+    <string name="recipeIngredientUnit_label">Unit</string>
+    <string name="recipeIngredientUnit_placeholder">%ingredient_unit%</string>
+    <string name="recipeIngredientAmount_placeholder">%ingredient_amount%</string>
+    <string name="recipeIngredientTitle_placeholder">%ingredient_title%</string>
+    <string name="recipeIngredientAisle_placeholder">%ingredient_aisle%</string>
+    <string name="recipe">Recipe</string>
+    <string name="fresh">Fresh</string>
+    <string name="recipeCrisps">Recipe Crisps</string>
+    <string name="onboardingDescription">Explore with recipes as much as you want, be creative, and make your kitchen smell fantastic!</string>
+    <string name="international">International</string>
+    <string name="cuisine">Cuisine</string>
+    <string name="description2">With Recipe Crisps, international cuisines are within reach. Let family taste world-class recipe.</string>
+    <string name="free">Free</string>
+    <string name="access">Access</string>
+    <string name="description3">Get an access to recipes anytime. Less thinking of what to cook for a day, more options, easier to pick.</string>
+
+
+</resources>
