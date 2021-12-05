@@ -1,7 +1,10 @@
 # Recipe Crisps
 A generic recipe search/maker android application, using Spoonacular API. 
 
-This is a group project that we had proposed to our professor, as part of our Mobile Computing course. Using `Pixel 3` with `API 30` to test.
+This is a group project that we had proposed to our professor, as part of our Mobile Computing course. 
+
+## Virtual Device Used
+- `Pixel 3 API 30`
 
 # Cloning the Repository
 ** **Note!** This app uses Firestore database, you must first ensure that you have enabled it in your Firebase console.
