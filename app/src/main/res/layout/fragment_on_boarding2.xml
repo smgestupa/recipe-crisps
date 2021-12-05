@@ -6,16 +6,16 @@
     android:background="@color/purple_200">
 
     <ImageView
-        android:id="@+id/image2"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:src="@drawable/img2"
-        app:layout_constraintHorizontal_bias=".3"
-        app:layout_constraintVertical_bias=".3"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+            android:id="@+id/image2"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/img2"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintVertical_bias="0.35000002"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginStart="25dp"/>
 
     <TextView
         android:id="@+id/title1"
@@ -63,20 +63,20 @@
         app:layout_constraintTop_toBottomOf="@+id/international" />
 
     <TextView
-        android:id="@+id/description2"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:text="@string/description2"
-        android:textSize="16sp"
-        app:layout_constraintVertical_bias="0"
-        app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintHeight_percent=".1"
-        app:layout_constraintWidth_percent=".5"
-        android:layout_marginTop="5dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/cuisine"
-        app:layout_constraintTop_toBottomOf="@+id/cuisine"/>
+            android:id="@+id/description2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/description2"
+            android:textSize="17sp"
+            app:layout_constraintVertical_bias="0"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintHeight_percent=".1"
+            app:layout_constraintWidth_percent=".5"
+            android:layout_marginTop="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/cuisine"
+            app:layout_constraintTop_toBottomOf="@+id/cuisine"/>
 
     <ImageView
         android:id="@+id/tab2"

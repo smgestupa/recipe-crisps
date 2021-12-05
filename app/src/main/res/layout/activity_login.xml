@@ -8,7 +8,7 @@
 
     <ImageView
             android:id="@+id/imageViewPasta"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="0dp"
             android:foreground="#E1EB9A83"
             android:src="@drawable/pasta"
@@ -18,7 +18,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" />
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout"
@@ -42,7 +42,7 @@
                 app:layout_constraintHeight_percent=".7"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tab_layout"
-                app:layout_constraintVertical_bias="0" />
+                app:layout_constraintVertical_bias="0.0"/>
 
         <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tab_layout"

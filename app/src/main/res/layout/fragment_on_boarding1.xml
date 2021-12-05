@@ -5,32 +5,32 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <ImageView
-        android:id="@+id/imageBowl"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:src="@drawable/img1"
-        app:layout_constraintHorizontal_bias=".3"
-        app:layout_constraintVertical_bias=".3"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+            android:id="@+id/imageBowl"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/img1"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintVertical_bias="0.35000002"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginStart="25dp"/>
 
     <TextView
-        android:id="@+id/title1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/recipeCrisps"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintVertical_bias="0"
-        app:layout_constraintHorizontal_bias="0"
-        android:layout_marginTop="25dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageBowl"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/imageBowl"
-        app:layout_constraintTop_toTopOf="parent"/>
+            android:id="@+id/title1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/recipeCrisps"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintVertical_bias="0"
+            app:layout_constraintHorizontal_bias="0.0"
+            android:layout_marginTop="25dp"
+            app:layout_constraintBottom_toTopOf="@+id/imageBowl"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/imageBowl"
+            app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
         android:id="@+id/fresh"
@@ -62,20 +62,20 @@
         app:layout_constraintTop_toBottomOf="@+id/fresh" />
 
     <TextView
-        android:id="@+id/description"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:text="@string/onboardingDescription"
-        android:textSize="16sp"
-        app:layout_constraintVertical_bias="0"
-        app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintHeight_percent=".1"
-        app:layout_constraintWidth_percent=".5"
-        android:layout_marginTop="5dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/recipe"
-        app:layout_constraintTop_toBottomOf="@+id/recipe"/>
+            android:id="@+id/description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/onboardingDescription"
+            android:textSize="17sp"
+            app:layout_constraintVertical_bias="0"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintHeight_percent=".1"
+            app:layout_constraintWidth_percent=".5"
+            android:layout_marginTop="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/recipe"
+            app:layout_constraintTop_toBottomOf="@+id/recipe"/>
 
     <ImageView
         android:layout_width="50dp"

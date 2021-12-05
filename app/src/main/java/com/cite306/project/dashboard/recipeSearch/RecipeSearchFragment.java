@@ -88,7 +88,7 @@ public class RecipeSearchFragment extends Fragment {
         if ( query.isEmpty() ) return;
 
         final String cleanQuery = query.replaceAll( " +", " " );
-        final URL url = new URL( Util.spoonacularRecipeSearchURL + "query=" + cleanQuery + "&apiKey=" + Util.spoonacularAPI_Key );
+        final URL url = new URL( Util.spoonacularRecipeSearchURL.replace( "{query}", cleanQuery ) );
 
         final OkHttpClient client = new OkHttpClient();
         final Request request = new Request.Builder()

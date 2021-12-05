@@ -49,7 +49,8 @@
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
                 android:layout_marginTop="20dp"
-                app:layout_constrainedWidth="true" android:id="@+id/relativeLayout4">
+                app:layout_constrainedWidth="true" android:id="@+id/relativeLayout4"
+                android:layout_gravity="center_horizontal">
 
             <EditText
                     android:layout_width="wrap_content"
@@ -60,7 +61,7 @@
                     android:backgroundTint="@color/black_gray" android:paddingStart="45dp" android:paddingEnd="10dp"
                     android:textColorHint="@color/light_gray" android:hint="@string/recipe_hint"
                     android:layout_centerHorizontal="true" android:textColor="@color/white"
-                    android:imeOptions="actionDone"/>
+                    android:imeOptions="actionDone" android:layout_centerInParent="true"/>
             <ImageView
                     android:layout_height="wrap_content" app:srcCompat="@drawable/search_icon"
                     android:id="@+id/imageView2" android:layout_width="25dp" android:layout_marginStart="10dp"/>

@@ -7,6 +7,7 @@ import android.view.inputmethod.EditorInfo;
 import android.widget.*;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -15,18 +16,14 @@ import com.cite306.project.adapter.makeRecipe.AddedIngredientsListAdapter;
 import com.cite306.project.adapter.makeRecipe.SearchedIngredientsAdapter;
 import com.cite306.project.model.Ingredient;
 import com.cite306.project.util.Util;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.gson.Gson;
 import com.squareup.okhttp.Callback;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
-import org.jetbrains.annotations.NotNull;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -156,11 +153,7 @@ public class MakeRecipeUpdateFragment extends Fragment {
 
     private void addNewIngredient( String ingredientId ) {
 
-        final String url = Util.spoonacularSpecificIngredientSearch
-                .replace( "{id}", ingredientId )
-                .replace( "{apiKey}", Util.spoonacularAPI_Key );
-
-        System.out.println( url );
+        final String url = Util.spoonacularSpecificIngredientSearch.replace( "{id}", ingredientId );
 
         final OkHttpClient client = new OkHttpClient();
         final Request request = new Request.Builder()
@@ -265,9 +258,9 @@ public class MakeRecipeUpdateFragment extends Fragment {
                     .collection("recipes")
                     .document( recipeNameField.getText().toString().trim() )
                     .set(savedIngredients)
-                    .addOnCompleteListener(t -> System.out.println("Recipe has been added to database!"));
+                    .addOnCompleteListener( t -> System.out.println("Recipe has been added to database!"));
 
-            showSuccessMessage("Successfully added a new recipe.");
+            showSnackbarMessage("Successfully added a new recipe.");
             closeRecipeAfterSave();
         } else if ( recipeNameField.getText().toString().trim().equals( bundle.getString( "recipe_name" ) ) ) {
             database.collection( "users" )
@@ -277,7 +270,7 @@ public class MakeRecipeUpdateFragment extends Fragment {
                     .set( savedIngredients )
                     .addOnCompleteListener( t -> System.out.println( "Recipe has been renamed and updated to database!" ) );
 
-            showSuccessMessage( "Successfully updated a recipe." );
+            showSnackbarMessage( "Successfully updated a recipe." );
             closeRecipeAfterSave();
         } else {
             final String savedRecipeName = bundle.getString( "recipe_name" );
@@ -288,7 +281,7 @@ public class MakeRecipeUpdateFragment extends Fragment {
                     .document( recipeNameField.getText().toString().trim() )
                     .get().addOnCompleteListener( task -> {
                         if ( task.getResult().exists() ) {
-                            showSuccessMessage( "Please use a different name." );
+                            showSnackbarMessage( "Please use a different name." );
                         } else {
                             database.collection( "users" )
                                     .document( mAuth.getUid() )
@@ -303,7 +296,7 @@ public class MakeRecipeUpdateFragment extends Fragment {
                                     .set( savedIngredients )
                                     .addOnCompleteListener( t -> System.out.println( "Recipe has been renamed and updated to database!" ) );
 
-                            showSuccessMessage( "Successfully renamed and updated a recipe." );
+                            showSnackbarMessage( "Successfully renamed and updated a recipe." );
                             closeRecipeAfterSave();
                         }
                     } );
@@ -314,9 +307,7 @@ public class MakeRecipeUpdateFragment extends Fragment {
         if ( query.isEmpty() ) return;
 
         final String cleanQuery = query.replaceAll( " +", " " );
-        final URL url = new URL( Util.spoonacularIngredientSearchURL + "query=" + cleanQuery + "&apiKey=" + Util.spoonacularAPI_Key );
-
-        System.out.println( url );
+        final URL url = new URL( Util.spoonacularIngredientSearchURL.replace( "{query}", cleanQuery ) );
 
         final OkHttpClient client = new OkHttpClient();
         final Request request = new Request.Builder()
@@ -362,15 +353,15 @@ public class MakeRecipeUpdateFragment extends Fragment {
         } );
     }
 
-    private void showSuccessMessage( String message ) {
-        final Toast notif = Toast.makeText( getContext(), message, Toast.LENGTH_LONG );
+    private void showSnackbarMessage( String message ) {
+        final Snackbar notif = Snackbar.make( getView(), message, Snackbar.LENGTH_LONG );
 
-        View toastView = notif.getView();
-        toastView.setBackgroundResource( R.drawable.toast_design );
+        final View snackbarDesign = notif.getView();
+        snackbarDesign.setBackground( ContextCompat.getDrawable( getContext(), R.drawable.toast_design ) );
 
-        TextView notifText = toastView.findViewById( android.R.id.message );
+        final TextView notifText = snackbarDesign.findViewById( com.google.android.material.R.id.snackbar_text );
         notifText.setTextColor( Color.parseColor( "#ffffff" ) );
-        notifText.setGravity( Gravity.CENTER );
+        notifText.setTextAlignment( View.TEXT_ALIGNMENT_CENTER );
         notifText.setTextSize( 14 );
 
         notif.show();

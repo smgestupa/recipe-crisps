@@ -3,15 +3,16 @@ package com.cite306.project.main;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.*;
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import com.cite306.project.R;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -114,10 +115,10 @@ public class RegisterFragment extends Fragment {
                                     .set( newUser )
                                     .addOnCompleteListener( t -> System.out.println( "Successfully added new user to database." ) );
 
-                            showToastMessage( "Email verification has been sent." );
+                            showSnackbarMessage( "Email verification has been sent." );
                         }
                     } catch ( Exception err ) {
-                        showToastMessage( "The email provided already exists." );
+                        showSnackbarMessage( "The email provided already exists." );
                     }
 
                     progressBar.setVisibility( View.INVISIBLE );
@@ -136,16 +137,15 @@ public class RegisterFragment extends Fragment {
         FirebaseAuth.getInstance().signOut();
     }
 
-    private void showToastMessage( String message ) {
-        final Toast notif;
-        notif = Toast.makeText( getContext(), message, Toast.LENGTH_LONG );
+    private void showSnackbarMessage( String message ) {
+        final Snackbar notif = Snackbar.make( getView(), message, Snackbar.LENGTH_LONG );
 
-        View toastView = notif.getView();
-        toastView.setBackgroundResource( R.drawable.toast_design );
+        final View snackbarDesign = notif.getView();
+        snackbarDesign.setBackground( ContextCompat.getDrawable( getContext(), R.drawable.toast_design ) );
 
-        TextView notifText = toastView.findViewById( android.R.id.message );
+        final TextView notifText = snackbarDesign.findViewById( com.google.android.material.R.id.snackbar_text );
         notifText.setTextColor( Color.parseColor( "#ffffff" ) );
-        notifText.setGravity( Gravity.CENTER );
+        notifText.setTextAlignment( View.TEXT_ALIGNMENT_CENTER );
         notifText.setTextSize( 14 );
 
         notif.show();

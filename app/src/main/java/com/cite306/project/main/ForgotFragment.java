@@ -11,8 +11,10 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.*;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import com.cite306.project.R;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.regex.Pattern;
@@ -67,23 +69,23 @@ public class ForgotFragment extends Fragment {
 
         mAuth.sendPasswordResetEmail( email )
                 .addOnCompleteListener( task -> {
-                    showToastMessage( task.isSuccessful() );
+                    showSnackbarMessage( task.isSuccessful() );
                     progressBar.setVisibility( View.INVISIBLE );
                 } );
     }
 
-    private void showToastMessage( boolean success ) {
-        final Toast notif;
+    private void showSnackbarMessage( boolean success ) {
+        final Snackbar notif;
 
-        if ( success ) notif = Toast.makeText( getContext(), "Please check your email for password reset instructions.", Toast.LENGTH_LONG );
-        else notif = Toast.makeText( getContext(), "Reset failed, please try again.", Toast.LENGTH_LONG );
+        if ( success ) notif = Snackbar.make( getView(), "Please check your email for password reset instructions.", Snackbar.LENGTH_LONG );
+        else notif = Snackbar.make( getView(), "Reset failed, please try again. Something went wrong!", Snackbar.LENGTH_LONG );
 
-        View toastView = notif.getView();
-        toastView.setBackgroundResource( R.drawable.toast_design );
+        final View snackbarDesign = notif.getView();
+        snackbarDesign.setBackground( ContextCompat.getDrawable( getContext(), R.drawable.toast_design ) );
 
-        TextView notifText = toastView.findViewById( android.R.id.message );
+        final TextView notifText = snackbarDesign.findViewById( com.google.android.material.R.id.snackbar_text );
         notifText.setTextColor( Color.parseColor( "#ffffff" ) );
-        notifText.setGravity( Gravity.CENTER );
+        notifText.setTextAlignment( View.TEXT_ALIGNMENT_CENTER );
         notifText.setTextSize( 14 );
 
         notif.show();
