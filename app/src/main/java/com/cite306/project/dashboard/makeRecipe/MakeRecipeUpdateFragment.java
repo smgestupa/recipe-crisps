@@ -153,11 +153,7 @@ public class MakeRecipeUpdateFragment extends Fragment {
 
     private void addNewIngredient( String ingredientId ) {
 
-        final String url = Util.spoonacularSpecificIngredientSearch
-                .replace( "{id}", ingredientId )
-                .replace( "{apiKey}", Util.spoonacularAPI_Key );
-
-        System.out.println( url );
+        final String url = Util.spoonacularSpecificIngredientSearch.replace( "{id}", ingredientId );
 
         final OkHttpClient client = new OkHttpClient();
         final Request request = new Request.Builder()
@@ -262,7 +258,7 @@ public class MakeRecipeUpdateFragment extends Fragment {
                     .collection("recipes")
                     .document( recipeNameField.getText().toString().trim() )
                     .set(savedIngredients)
-                    .addOnCompleteListener(t -> System.out.println("Recipe has been added to database!"));
+                    .addOnCompleteListener( t -> System.out.println("Recipe has been added to database!"));
 
             showSnackbarMessage("Successfully added a new recipe.");
             closeRecipeAfterSave();
@@ -285,7 +281,7 @@ public class MakeRecipeUpdateFragment extends Fragment {
                     .document( recipeNameField.getText().toString().trim() )
                     .get().addOnCompleteListener( task -> {
                         if ( task.getResult().exists() ) {
-//                            showSuccessMessage( "Please use a different name." );
+                            showSnackbarMessage( "Please use a different name." );
                         } else {
                             database.collection( "users" )
                                     .document( mAuth.getUid() )
@@ -311,9 +307,7 @@ public class MakeRecipeUpdateFragment extends Fragment {
         if ( query.isEmpty() ) return;
 
         final String cleanQuery = query.replaceAll( " +", " " );
-        final URL url = new URL( Util.spoonacularIngredientSearchURL + "query=" + cleanQuery + "&apiKey=" + Util.spoonacularAPI_Key );
-
-        System.out.println( url );
+        final URL url = new URL( Util.spoonacularIngredientSearchURL.replace( "{query}", cleanQuery ) );
 
         final OkHttpClient client = new OkHttpClient();
         final Request request = new Request.Builder()

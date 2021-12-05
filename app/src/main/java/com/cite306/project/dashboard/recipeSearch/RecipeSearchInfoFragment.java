@@ -131,8 +131,6 @@ public class RecipeSearchInfoFragment extends Fragment {
 
                     recipeInfoRecyclerView.setAdapter( new RecipeInfoAdapter( getContext(), recipe.getIngredients(), RecipeSearchInfoFragment.this ) );
 
-                    System.out.println( recipe.getIngredients().get( 0 ).getImageURL() );
-
                     recipeInfoProgressBar.setVisibility( View.INVISIBLE );
                     recipeInfoView.setVisibility( View.VISIBLE );
                 } );
