@@ -1,10 +1,17 @@
-*.iml
-.gradle
-/local.properties
+# IDE-related files
 /.idea
 .DS_Store
+
+# User-specific files
+/local.properties
+
+# Project-related files
 /build
 /captures
 .externalNativeBuild
 .cxx
-local.properties
+
+# Gradle related files
+*.iml
+.gradle
+/gradle
