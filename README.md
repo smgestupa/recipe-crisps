@@ -10,7 +10,10 @@ This is a group project that we had proposed to our professor, as part of our Mo
 2. Open your terminal and type `git clone git@github.com:laazyCmd/recipe-crisps.git`
 3. Import the folder using either `Android Studio` or `IntelliJ`
 4. Wait for `gradle` to build the project
-5. Before starting the app, ensure that you have your Firebase's `google-services.json` to your app folder.
+5. Before starting the app, ensure:
+   - You have your Firebase's `google-services.json` to your app folder
+   - You have added your own Spoonacular API Key to `spoonacularAPI_Key` string, in the `Util` interface
+   - You have added your own GitHub ID and Personal Access Token in `github.properties`
 
 # Screenshots
 ![img.png](screenshots/img.png)
