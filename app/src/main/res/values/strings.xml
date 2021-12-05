@@ -51,7 +51,7 @@
     <string name="makeRecipeList_recipeLabel">Your Recipes</string>
     <string name="makeRecipeList_addButton">Add Your Own Recipe</string>
     <!-- MAKE RECIPE INFO STRINGS -->
-    <string name="makeRecipeInfo_deleteButton">Delete Button</string>
+    <string name="makeRecipeInfo_deleteButton">Delete</string>
     <!-- MAKE RECIPE FRAGMENT UPDATE STRINGS -->
     <string name="recipeMakeUpdate_closeInterface">Close Interface</string>
     <string name="recipeMakeUpdate_searchHint">Search an Ingredient</string>
