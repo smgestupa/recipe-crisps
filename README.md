@@ -14,9 +14,14 @@ This is a group project that we had proposed to our professor, as part of our Mo
 3. Import the folder using either `Android Studio` or `IntelliJ`
 4. Wait for `gradle` to build the project
 5. Before starting the app, ensure:
-   - You have your Firebase's `google-services.json` to your app folder
-   - You have added your own Spoonacular API Key to `spoonacularAPI_Key` string, in the `Util` interface
-   - You have added your own GitHub ID and Personal Access Token in `github.properties`
+   - You have your Firebase's `google-services.json` to the `/app` directory
+   - You have added your own Spoonacular API Key to `spoonacularAPI_Key` string, in the `/app/src/main/java/com/cite306/project/util/Util` interface
+   - You have added your own GitHub ID and Personal Access Token in `/github.properties`
+
+# How to Interact
+- `Click` to see the information of a queried or user-made recipe
+- `Long Click` to edit a user-made recipe
+- `Click & Drag` to drag a queried ingredient inside or outside when making/updating a recipe
 
 # Screenshots
 ![img.png](screenshots/img.png)
