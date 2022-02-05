@@ -1,7 +1,7 @@
 # Recipe Crisps
 A generic recipe search/maker android application, using Spoonacular API. 
 
-This is a group project that we had proposed to our professor, as part of our Mobile Computing course. 
+This is a group project that we had proposed to our professor, as part of our Mobile Computing course. I mostly designed the UI, and I implemented the algorithm to allow the application to communicate with the Spoonacular API, mainly used for searching specific recipes. I also implemented the recipe making function, by using Firestore as the database and used the said API to search for specific ingredients.
 
 # Cloning the Repository
 ** **Note!** This app uses Firestore database, you must first ensure that you have enabled it in your Firebase console.
